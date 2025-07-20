@@ -27,6 +27,11 @@ header {
     width: 150px; /* Adjust the size as needed */
     margin-top: 10px;
 }
+/* Styling for Mood Board */
+.Moodboard-Angel{
+    width: 500px;
+    margin-top: 10px;
+}
 
 /* Menu button styling */
 header nav {
