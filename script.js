@@ -31,3 +31,51 @@ function showSection(sectionId) {
         visionSection.style.display = "block";
     }
 }
+
+
+    /*Simple carousel for mood board*/
+    const leftBtn = document.querySelector('.panLeft');
+    const rightBtn = document.querySelector('.panRight');
+    //selects all items , returns a nodeList by default
+    const slideItems = Array.from(document.querySelectorAll('.slide-item'));
+    const slide_size = slideItems.length;
+    
+    
+    leftBtn.addEventListener('click', swipeLeft);
+    rightBtn.addEventListener('click', swipeRight)
+    
+    function swipeLeft(e){
+        const currentSlideItem = document.querySelector('.slide-item.active');
+        const currIndex = slideItems.indexOf(currentSlideItem);
+    
+        let nextIndex;
+        
+        if(currIndex === 0){
+            nextIndex = slide_size - 1;
+        }
+        else{
+            nextIndex = currIndex - 1;
+        }
+    
+        slideItems[nextIndex].classList.add('active');
+        currentSlideItem.classList.remove('active');
+    
+    }
+    
+    function swipeRight(e){
+        const currentSlideItem = document.querySelector('.slide-item.active');
+        const currIndex = slideItems.indexOf(currentSlideItem);
+    
+        let nextIndex;
+        
+        if(currIndex === slide_size - 1){
+            nextIndex = 0;
+        }
+        else{
+            nextIndex = currIndex + 1;
+        }
+    
+        slideItems[nextIndex].classList.add('active');
+        currentSlideItem.classList.remove('active');
+    
+    }
